@@ -6,10 +6,15 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <form action="/search" method="GET">
+      <label for="search">Search: </label>
+      <input type="text" name="search" id="search" placeholder="Name or Email" required />
+      <button type="submit">Search</button>
     <ul>
       <% if (locals.users) {%> <% users.forEach(user => { %>
       <li>
-        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
+        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>,
+        Email: <%= user.email %>, Age: <%= user.age %>, Bio: <%= user.bio %>
       </li>
       <a href="/<%= user.id %>/update">Update</a>
       <form

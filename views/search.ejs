@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (users.length > 0) { %> <% users.map((user) => { %>
+    <div>ID: <%= user.id %></div>
+    <div>Name: <%= user.firstName %> <%= user.lastName %></div>
+    <div>Email: <%= user.email %></div>
+    <div>Age: <%= user.age %></div>
+    <div>Bio: <%= user.bio %></div>
+    <% }); %> <% } else { %>
+    <div>User Not Found</div>
+    <% } %>
+    <a href="/">Home</a>
+  </body>
+</html>
